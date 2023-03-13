@@ -27,14 +27,15 @@ function password_generate($chars)
     </form>
     <div class="passw-generated">
       <?php 
-        $lengh_passw =  $_GET["passw-lenght"] ? $_GET["passw-lenght"] : "";
-        if($lengh_passw > 0){
-          echo password_generate($lengh_passw);
+        if(isset($_GET["passw-lenght"])){
+          echo password_generate($_GET["passw-lenght"]);
         }
         else{
-          $lengh_passw = "";
           echo "Inserisci la lunghezza della password";
         }
+      ?>
+      <?php
+        // var_dump($_GET["passw-lenght"]);
       ?>
     </div>
   </div>
